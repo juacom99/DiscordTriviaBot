@@ -7,7 +7,7 @@ To invite this bot to your server follow the Invitation [Link](https://discordap
 
 This project depends on:
 
-Discord4j-2.10.1
+[JDA](https://github.com/DV8FromTheWorld/JDA)
 
 gson-2.8.2
 
