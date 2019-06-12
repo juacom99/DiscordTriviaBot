@@ -48,7 +48,14 @@
             <artifactId>commons-text</artifactId>
             <version>1.6</version>
         </dependency>
-
+        
+        <!--Apache Lang-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.1</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
     
     <repositories>
