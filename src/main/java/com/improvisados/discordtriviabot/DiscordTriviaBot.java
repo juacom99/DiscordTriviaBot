@@ -15,6 +15,7 @@ import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import java.awt.Color;
 import java.io.FileNotFoundException;
+import java.net.Proxy;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -42,6 +43,7 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 import net.dv8tion.jda.core.managers.GuildController;
 import net.dv8tion.jda.core.utils.PermissionUtil;
+import okhttp3.OkHttpClient;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -68,6 +70,18 @@ public class DiscordTriviaBot extends ListenerAdapter
         this.client = new JDABuilder(AccountType.BOT).setToken(token).build();
         this.client.addEventListener(this);
     }
+    
+        public DiscordTriviaBot(String token, String commandPrefix,String roleName,Color roleColor,Proxy proxy) throws LoginException
+    {
+        this.roleName=roleName;
+        this.roleColor=roleColor;
+        this.activeTrivias=new HashMap<Channel,Trivia>();
+        OkHttpClient.Builder builder = new OkHttpClient.Builder().proxy(proxy);        
+        this.client = new JDABuilder(AccountType.BOT).setHttpClientBuilder(builder).setToken(token).build();
+        this.client.addEventListener(this);
+      
+    }
+        
 
     @Override
     public void onReady(ReadyEvent event)
