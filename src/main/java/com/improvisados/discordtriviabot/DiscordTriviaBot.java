@@ -67,11 +67,6 @@ public class DiscordTriviaBot extends ListenerAdapter
         this.activeTrivias=new HashMap<Channel,Trivia>();
         this.client = new JDABuilder(AccountType.BOT).setToken(token).build();
         this.client.addEventListener(this);
-        
-       
-
-      
-       
     }
 
     @Override
@@ -124,9 +119,6 @@ public class DiscordTriviaBot extends ListenerAdapter
             buildRole(guild);
        }
     }
-
-    
-
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event)
@@ -257,6 +249,7 @@ public class DiscordTriviaBot extends ListenerAdapter
                             int position = 1;
                             for (Map.Entry<Object, Integer> w : winners) {
                                builder.addField("\u200b", position + "º - " + ((User) w.getKey()).getName() + "   " + w.getValue() + " pts", false);
+                               position++;
                             }
 
                             channel.sendMessage(builder.build()).queue();
