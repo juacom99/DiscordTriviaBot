@@ -5,18 +5,8 @@
  */
 package com.improvisados.discordtriviabot;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.improvisados.discordtriviabot.configuration.Configuration;
-import java.awt.Color;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.net.Inet4Address;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.Proxy;
-import java.net.UnknownHostException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.security.auth.login.LoginException;
